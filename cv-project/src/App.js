@@ -18,19 +18,24 @@ class App extends React.Component{
   }
   //function to update state everytime content in textbox is changed 
   
-  putName(val){
+  putName(e){
+    //gets the event object 
+    //makes akey with name of class and puts given value in it
+    //e.g name : abc;
+
+    
     this.setState({
       data : this.state.data,
-      name: val
+      [e.target.className]: e.target.value,
     })
   }
 
 
   //function to change state everytime the button is clicked
   putData(){
+    
     this.setState({
-      data : {name: this.state.name},
-      name: "",
+      data : {name: this.state.name, country: this.state.country},
       
     })
   }
@@ -40,7 +45,7 @@ class App extends React.Component{
     return(
       <>
     
-      <GeneralInfo handler={(e)=>this.putName(e.target.value)}  buttonHandler={()=>this.putData()}/>
+      <GeneralInfo handler={(e)=>this.putName(e)}  buttonHandler={()=>this.putData()}/>
 
 
       <CvInfo info={this.state}/>

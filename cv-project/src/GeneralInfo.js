@@ -1,6 +1,6 @@
 import React from "react";
 
-
+//this component getd d=general data and updates the parent state
 class GeneralInfo extends React.Component{
     constructor(props){
         super(props);
@@ -13,6 +13,7 @@ class GeneralInfo extends React.Component{
         return(
             <>
             <input type="text" onChange={this.props.handler} className="name"></input>
+            <input type="text" onChange={this.props.handler} className="country"></input>
             <button onClick={this.props.buttonHandler}>Submit</button>
             </>
         )
