@@ -8,11 +8,12 @@ class GeneralInfo extends React.Component{
 
 
     render(){
-            
+
 
         return(
             <>
-            <input type="text" onChange={this.props.handler}></input>
+            <input type="text" onChange={this.props.handler} className="name"></input>
+            <button onClick={this.props.buttonHandler}>Submit</button>
             </>
         )
     }
