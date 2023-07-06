@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./styles/app.css";
+
 import GeneralInfo from "./GeneralInfo";
 
 import CvInfo from "./CvInfo";
@@ -10,7 +12,7 @@ class App extends React.Component{
   constructor(props){
     super(props);
 
-
+    //state is initalized
     this.state = {
       data : {},
       name: "",
@@ -35,7 +37,12 @@ class App extends React.Component{
   putData(){
     
     this.setState({
-      data : {name: this.state.name, country: this.state.country},
+      data : {
+        name: this.state.name,
+        country: this.state.country,
+        address : this.state.address,
+        
+        },
       
     })
   }
@@ -45,7 +52,7 @@ class App extends React.Component{
     return(
       <>
     
-      <GeneralInfo handler={(e)=>this.putName(e)}  buttonHandler={()=>this.putData()}/>
+      <GeneralInfo changeHandler={(e)=>this.putName(e)}  buttonHandler={()=>this.putData()}/>
 
 
       <CvInfo info={this.state}/>

@@ -9,10 +9,12 @@ class CvInfo extends React.Component{
     render(){
         let name = this.props.info.data.name;
         let country = this.props.info.data.country;
+        let address = this.props.info.data.address;
         return(
             <>
             <div>{name}</div>
             <div>{country}</div>
+            <div>{address}</div>
             </>
         )
     }

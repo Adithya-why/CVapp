@@ -11,11 +11,26 @@ class GeneralInfo extends React.Component{
 
 
         return(
-            <>
-            <input type="text" onChange={this.props.handler} className="name"></input>
-            <input type="text" onChange={this.props.handler} className="country"></input>
-            <button onClick={this.props.buttonHandler}>Submit</button>
-            </>
+            <div className="ginfo">
+            
+            <div>
+                <label htmlFor="name">Name</label>
+                <input type="text" onChange={this.props.changeHandler} className="name" id="name"></input>
+            </div>
+
+            <div>
+                <label htmlFor="country">Country</label>
+                <input type="text" onChange={this.props.changeHandler} className="country" id="country"></input>
+            </div>
+
+            <div>
+                <label htmlFor="address">Address</label>
+                <textarea onChange={this.props.changeHandler} className="address" id="address"></textarea>
+            </div>
+
+
+            <button onClick={this.props.buttonHandler} className="gbtn">Submit</button>
+            </div>
         )
     }
 }

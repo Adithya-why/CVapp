@@ -1,0 +1,17 @@
+.ginfo{
+   display: grid;
+   grid-template-rows: 1fr 1fr 1fr;
+   grid-template-columns: 1fr;
+   gap: 1em;
+}
+
+
+.name,.country,.address{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.gbtn{
+    width: 10%;
+    height: 70%;
+}
