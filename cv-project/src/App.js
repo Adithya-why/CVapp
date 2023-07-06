@@ -6,6 +6,8 @@ import GeneralInfo from "./GeneralInfo";
 
 import CvInfo from "./CvInfo";
 
+import TopBar from "./TopBar";
+
 
  //app component holds the entire app
 class App extends React.Component{
@@ -51,11 +53,14 @@ class App extends React.Component{
   render(){
     return(
       <>
+
+      <TopBar/>
     
       <GeneralInfo changeHandler={(e)=>this.putName(e)}  buttonHandler={()=>this.putData()}/>
 
 
       <CvInfo info={this.state}/>
+
 
       </>
     )
