@@ -12,6 +12,9 @@ class CvInfo extends React.Component{
         let address = this.props.info.data.address;
         let email = this.props.info.data.email;
         let phone = this.props.info.data.phone;
+        let sch = this.props.info.data.sch;
+        let title = this.props.info.data.title;
+        let dos = this.props.info.data.dos;
         return(
             <>
             <div>{name}</div>
@@ -19,6 +22,9 @@ class CvInfo extends React.Component{
             <div>{address}</div>
             <div>{email}</div>
             <div>{phone}</div>
+            <div>{sch}</div>
+            <div>{title}</div>
+            <div>{dos}</div>
             </>
         )
     }

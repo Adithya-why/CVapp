@@ -8,6 +8,8 @@ import CvInfo from "./CvInfo";
 
 import TopBar from "./TopBar";
 
+import EduInfo from "./EduInfo";
+
 
  //app component holds the entire app
 class App extends React.Component{
@@ -37,7 +39,7 @@ class App extends React.Component{
 
   //function to change state everytime the button is clicked
   putData(){
-    
+  
     this.setState({
       data : {
         name: this.state.name,
@@ -45,6 +47,9 @@ class App extends React.Component{
         address : this.state.address,
         email : this.state.email,
         phone : this.state.phone,
+        sch : this.state.sch,
+        title : this.state.title,
+        dos : this.state.dos,
         },
       
     })
@@ -58,9 +63,12 @@ class App extends React.Component{
       <TopBar/>
     
       <GeneralInfo changeHandler={(e)=>this.putName(e)}  buttonHandler={()=>this.putData()}/>
-
+      <hr></hr>
+      
+      <EduInfo changeHandler={(e)=>this.putName(e)} buttonHandler={()=>this.putData()}/>
 
       <CvInfo info={this.state}/>
+
 
 
       </>
