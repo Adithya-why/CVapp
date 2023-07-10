@@ -6,7 +6,7 @@
 }
 
 
-.name,.country,.address{
+.name,.country,.address,.email,.phone{
     display: flex;
     flex-direction: row;
     align-items: center;

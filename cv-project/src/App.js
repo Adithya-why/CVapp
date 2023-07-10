@@ -43,7 +43,8 @@ class App extends React.Component{
         name: this.state.name,
         country: this.state.country,
         address : this.state.address,
-        
+        email : this.state.email,
+        phone : this.state.phone,
         },
       
     })
