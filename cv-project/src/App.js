@@ -23,7 +23,7 @@ class App extends React.Component{
     this.state = {
       data : {},
       name: "",
-      n : 1,
+      n : 0,
     }
   }
   //function to update state everytime content in textbox is changed 
@@ -34,12 +34,19 @@ class App extends React.Component{
     //e.g name : abc;
 
     
+
     this.setState({
       data : this.state.data,
+      name: this.state.name,
+      country: this.state.country,
+      address : this.state.address,
+      email : this.state.email,
+      phone : this.state.phone,
       [e.target.className]: e.target.value,
       n:this.state.n,
     })
   }
+  
 
 
   //function to change state everytime the button is clicked
@@ -52,11 +59,12 @@ class App extends React.Component{
         address : this.state.address,
         email : this.state.email,
         phone : this.state.phone,
-        sch : this.state.sch,
-        title : this.state.title,
-        dos : this.state.dos,
+        ['sch'+ this.state.n] : this.state['sch'+ this.state.n],
+        ['title'+this.state.n] : this.state['title'+this.state.n],
+        ['dos'+ this.state.n] : this.state['dos'+ this.state.n],
         },
         n:this.state.n,
+
       
     })
   }
@@ -68,8 +76,9 @@ class App extends React.Component{
   addEduInfo(){
     this.setState({
       data : this.state.data,
+      
       n: this.state.n + 1, 
-    },()=>console.log(this.state.n));
+    },()=>console.log(this.state));
 
     
   }

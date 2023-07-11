@@ -30,7 +30,7 @@ class CvInfo extends React.Component{
         renderList.push(<div key={uuidv4()}>{dos}</div>)
         }
 
-        console.log(renderList)
+        
         return(
             <>
             <div>{name}</div>
