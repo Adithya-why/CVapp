@@ -40,6 +40,8 @@ class GeneralInfo extends React.Component{
             </div>
 
             <button onClick={this.props.buttonHandler} className="gbtn">Submit</button>
+
+            
             </div>
         )
     }
