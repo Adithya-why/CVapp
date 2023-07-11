@@ -15,20 +15,13 @@ class CvInfo extends React.Component{
         let address = this.props.info.data.address;
         let email = this.props.info.data.email;
         let phone = this.props.info.data.phone;
+        let sch = this.props.info.data.sch;
+        let title = this.props.info.data.title;
+        let dos = this.props.info.data.dos;
 
-        let n = this.props.info.n;
+       
 
-        let renderList = [];
-
-        for(let i =0;i<n;i++){
-        let sch = this.props.info.data['sch'+i];
-        let title = this.props.info.data['title' + i];
-        let dos = this.props.info.data['dos' + i];
-
-        renderList.push(<div key={uuidv4()}>{sch}</div>);
-        renderList.push(<div key={uuidv4()}>{title}</div>);
-        renderList.push(<div key={uuidv4()}>{dos}</div>)
-        }
+        
 
         
         return(
@@ -38,9 +31,11 @@ class CvInfo extends React.Component{
             <div>{address}</div>
             <div>{email}</div>
             <div>{phone}</div>
+            <div>{sch}</div>
+            <div>{title}</div>
+            <div>{dos}</div>
 
-
-            {renderList}
+            
             </>
         )
     }

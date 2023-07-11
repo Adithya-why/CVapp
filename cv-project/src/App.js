@@ -22,8 +22,8 @@ class App extends React.Component{
     //state is initalized
     this.state = {
       data : {},
-      name: "",
-      n : 0,
+      
+     
     }
   }
   //function to update state everytime content in textbox is changed 
@@ -37,13 +37,9 @@ class App extends React.Component{
 
     this.setState({
       data : this.state.data,
-      name: this.state.name,
-      country: this.state.country,
-      address : this.state.address,
-      email : this.state.email,
-      phone : this.state.phone,
+      
       [e.target.className]: e.target.value,
-      n:this.state.n,
+      
     })
   }
   
@@ -59,12 +55,11 @@ class App extends React.Component{
         address : this.state.address,
         email : this.state.email,
         phone : this.state.phone,
-        ['sch'+ this.state.n] : this.state['sch'+ this.state.n],
-        ['title'+this.state.n] : this.state['title'+this.state.n],
-        ['dos'+ this.state.n] : this.state['dos'+ this.state.n],
+        sch : this.state.sch,
+        title : this.state.title,
+        dos : this.state.dos,
         },
-        n:this.state.n,
-
+        
       
     })
   }
@@ -73,26 +68,12 @@ class App extends React.Component{
     //function to add more educational info component
 
     //increases n value i state
-  addEduInfo(){
-    this.setState({
-      data : this.state.data,
-      
-      n: this.state.n + 1, 
-    },()=>console.log(this.state));
-
-    
-  }
-
+  
 
   render(){
 
     //basically decides how many edu info comps are to be rendered based on n value in state
-    let eduArr = [];
-
-    for(let i =0;i<this.state.n;i++){
-      eduArr.push(<EduInfo changeHandler={(e)=>this.putName(e)} buttonHandler={()=>this.putData()} num={i} key={uuidv4()}/>);
-     
-    }
+    
 
 
     return(
@@ -104,7 +85,7 @@ class App extends React.Component{
       <hr></hr>
       
       
-      {eduArr}
+      <EduInfo changeHandler={(e)=>this.putName(e)}  buttonHandler={()=>this.putData()} />
       
 
       <button onClick={()=>this.addEduInfo()}>Add</button>
