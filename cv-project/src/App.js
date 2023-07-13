@@ -23,7 +23,7 @@ class App extends React.Component{
     this.state = {
       data : {},
       
-     
+     n : 0,
     }
   }
   //function to update state everytime content in textbox is changed 
@@ -68,12 +68,24 @@ class App extends React.Component{
     //function to add more educational info component
 
     //increases n value i state
+
+
+    addEduInfo(){
+      this.setState({
+        
+        n : this.state.n + 1,
+      })
+    }
   
 
   render(){
 
     //basically decides how many edu info comps are to be rendered based on n value in state
-    
+    let eduArr = [];
+
+    for(let i = 0;i<this.state.n;i++){
+      eduArr.push(<EduInfo changeHandler={(e)=>this.putName(e)}  buttonHandler={()=>this.putData()} key={i} />)
+    }
 
 
     return(
@@ -84,8 +96,8 @@ class App extends React.Component{
       <GeneralInfo changeHandler={(e)=>this.putName(e)}  buttonHandler={()=>this.putData()}/>
       <hr></hr>
       
+      {eduArr}
       
-      <EduInfo changeHandler={(e)=>this.putName(e)}  buttonHandler={()=>this.putData()} />
       
 
       <button onClick={()=>this.addEduInfo()}>Add</button>

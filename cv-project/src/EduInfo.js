@@ -14,7 +14,7 @@ class EduInfo extends React.Component{
             <>
             <div className="einfo">
                 <label htmlFor="sch">School Name</label>
-                <input type="text" onChange={this.props.changeHandler} className={'sch'} id="sch"></input>
+                <input type="text" onBlur={this.props.changeHandler} className={'sch'} id="sch"></input>
             </div>
 
             <div>
