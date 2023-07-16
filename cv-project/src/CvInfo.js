@@ -15,9 +15,22 @@ class CvInfo extends React.Component{
         let address = this.props.info.data.address;
         let email = this.props.info.data.email;
         let phone = this.props.info.data.phone;
-        let sch = this.props.info.data.sch;
-        let title = this.props.info.data.title;
-        let dos = this.props.info.data.dos;
+        
+
+        let eduData = this.props.info.eduData;
+
+        let n = this.props.info.n;
+        let res = [];
+       
+        for(let i = 1;i<=n;i++){
+            let obj = eduData[i];
+            if(obj){
+            res.push(<div key={uuidv4()}>{obj['sch']}</div>);
+            res.push(<div key={uuidv4()}>{obj['title']}</div>);
+            res.push(<div key={uuidv4()}>{obj['dos']}</div>);
+            }
+        }
+        console.log(res);
 
        
 
@@ -31,9 +44,7 @@ class CvInfo extends React.Component{
             <div>{address}</div>
             <div>{email}</div>
             <div>{phone}</div>
-            <div>{sch}</div>
-            <div>{title}</div>
-            <div>{dos}</div>
+            {res}
 
             
             </>
