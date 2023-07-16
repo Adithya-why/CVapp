@@ -22,7 +22,7 @@ class App extends React.Component{
     //state is initalized
     this.state = {
       data : {},
-      
+      eduData : {},
      n : 0,
     }
   }
@@ -55,9 +55,6 @@ class App extends React.Component{
         address : this.state.address,
         email : this.state.email,
         phone : this.state.phone,
-        sch : this.state.sch,
-        title : this.state.title,
-        dos : this.state.dos,
         },
         
       
@@ -76,6 +73,15 @@ class App extends React.Component{
         n : this.state.n + 1,
       })
     }
+
+//stores eduInfo in the edudata object
+    storeEduInfo(e){
+      this.setState({
+        data : this.state.data,
+        n : this.state.n,
+        eduData : {...this.state.eduData, [this.state.n]: {...this.state.eduData[this.state.n], [e.target.className]: e.target.value}},
+      })
+    }
   
 
   render(){
@@ -84,7 +90,7 @@ class App extends React.Component{
     let eduArr = [];
 
     for(let i = 0;i<this.state.n;i++){
-      eduArr.push(<EduInfo changeHandler={(e)=>this.putName(e)}  buttonHandler={()=>this.putData()} key={i} />)
+      eduArr.push(<EduInfo changeHandler={(e)=>this.storeEduInfo(e)}  buttonHandler={()=>this.putData()} key={i} />)
     }
 
 
