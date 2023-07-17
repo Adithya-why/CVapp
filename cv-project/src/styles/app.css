@@ -6,7 +6,7 @@
 }
 
 
-.name,.country,.address,.email,.phone,#sch,#title,#dos{
+.name,.country,.address,.email,.phone,#sch,#title,#dos,#cm,#tt,#res,#dow{
     display: flex;
     flex-direction: row;
     align-items: center;

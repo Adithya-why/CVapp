@@ -23,7 +23,7 @@ class EduInfo extends React.Component{
             </div>
 
             <div>
-                <label htmlFor="dos">Title of study</label>
+                <label htmlFor="dos">Date of study</label>
                 <input type="date" onChange={this.props.changeHandler} className={"dos"} id="dos"></input>
             </div>
 

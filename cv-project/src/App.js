@@ -13,6 +13,8 @@ import TopBar from "./TopBar";
 
 import EduInfo from "./EduInfo";
 
+import ExpPro from "./ExpPro";
+
 
  //app component holds the entire app
 class App extends React.Component{
@@ -23,7 +25,9 @@ class App extends React.Component{
     this.state = {
       data : {},
       eduData : {},
+      expData : {},
      n : 0,
+     ex : 0,
     }
   }
   //function to update state everytime content in textbox is changed 
@@ -74,12 +78,32 @@ class App extends React.Component{
       })
     }
 
+
+
+
 //stores eduInfo in the edudata object
     storeEduInfo(e){
       this.setState({
         data : this.state.data,
         n : this.state.n,
         eduData : {...this.state.eduData, [this.state.n]: {...this.state.eduData[this.state.n], [e.target.className]: e.target.value}},
+      })
+    }
+
+
+    addExpInfo(){
+      this.setState({
+        
+        ex : this.state.ex + 1,
+      })
+    }
+
+
+    storeExpInfo(e){
+      this.setState({
+        data : this.state.data,
+        n : this.state.n,
+        expData : {...this.state.expData, [this.state.ex]: {...this.state.expData[this.state.ex], [e.target.className]: e.target.value}},
       })
     }
   
@@ -91,6 +115,12 @@ class App extends React.Component{
 
     for(let i = 0;i<this.state.n;i++){
       eduArr.push(<EduInfo changeHandler={(e)=>this.storeEduInfo(e)}  buttonHandler={()=>this.putData()} key={i} />)
+    }
+
+    let expArr = [];
+
+    for(let j = 0;j<this.state.ex;j++){
+      expArr.push(<ExpPro changeHandler={(e)=>this.storeExpInfo(e)}  buttonHandler={()=>this.putData()} key={j} />)
     }
 
 
@@ -108,9 +138,16 @@ class App extends React.Component{
 
       <button onClick={()=>this.addEduInfo()}>Add</button>
 
+
+      {expArr}
+
+      <button onClick={()=>this.addExpInfo()}>Add</button>
+
       <CvInfo info={this.state}/>
 
+      
 
+      
 
       </>
     )
