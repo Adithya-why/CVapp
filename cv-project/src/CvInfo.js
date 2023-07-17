@@ -30,7 +30,21 @@ class CvInfo extends React.Component{
             res.push(<div key={uuidv4()}>{obj['dos']}</div>);
             }
         }
-        console.log(res);
+        
+        let expData = this.props.info.expData;
+        let ex = this.props.info.ex;
+
+        let eres = [];
+
+        for(let j = 1;j<=ex;j++){
+            let obj = expData[j];
+            if(obj){
+            eres.push(<div key={uuidv4()}>{obj['cm']}</div>);
+            eres.push(<div key={uuidv4()}>{obj['tt']}</div>);
+            eres.push(<div key={uuidv4()}>{obj['res']}</div>);
+            eres.push(<div key={uuidv4()}>{obj['dow']}</div>);
+            }
+        }
 
        
 
@@ -46,7 +60,7 @@ class CvInfo extends React.Component{
             <div>{phone}</div>
             {res}
 
-            
+            {eres}
             </>
         )
     }
