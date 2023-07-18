@@ -11,7 +11,7 @@ class ExpPro extends React.Component{
     render(){
 
         return(
-            <>
+            <div className="expinfo">
             <div className="expnfo">
                 <label htmlFor="cm">Comapany Name</label>
                 <input type="text" onBlur={this.props.changeHandler} className={'cm'} id="cm"></input>
@@ -35,7 +35,7 @@ class ExpPro extends React.Component{
             <button onClick={this.props.buttonHandler}>Submit</button>
 
            
-            </>
+            </div>
         )
     }
 }

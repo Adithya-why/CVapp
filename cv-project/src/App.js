@@ -130,18 +130,18 @@ class App extends React.Component{
       <TopBar/>
     
       <GeneralInfo changeHandler={(e)=>this.putName(e)}  buttonHandler={()=>this.putData()}/>
-      <hr></hr>
-      
-      {eduArr}
       
       
+      <div className="edu">{eduArr}</div>
+      
+      
 
-      <button onClick={()=>this.addEduInfo()}>Add</button>
+      <button onClick={()=>this.addEduInfo()}>Add Education</button>
 
 
-      {expArr}
+      <div className="exp">{expArr}</div>
 
-      <button onClick={()=>this.addExpInfo()}>Add</button>
+      <button onClick={()=>this.addExpInfo()}>Add Experience</button>
 
       <CvInfo info={this.state}/>
 

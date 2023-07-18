@@ -52,16 +52,19 @@ class CvInfo extends React.Component{
 
         
         return(
-            <>
-            <div>{name}</div>
-            <div>{country}</div>
-            <div>{address}</div>
-            <div>{email}</div>
-            <div>{phone}</div>
-            {res}
+            <div className="cv">
+            <div className="pd">
+                <div>{name}</div>
+                <div>{country}</div>
+                <div>{address}</div>
+                <div>{email}</div>
+                <div>{phone}</div>
+            </div>
+            
+            <div className="edu">{res}</div>
 
-            {eres}
-            </>
+            <div className="exp">{eres}</div>
+            </div>
         )
     }
 }

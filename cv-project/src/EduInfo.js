@@ -11,7 +11,7 @@ class EduInfo extends React.Component{
 
         
         return(
-            <>
+            <div className="eduinfo">
             <div className="einfo">
                 <label htmlFor="sch">School Name</label>
                 <input type="text" onBlur={this.props.changeHandler} className={'sch'} id="sch"></input>
@@ -30,7 +30,7 @@ class EduInfo extends React.Component{
             <button onClick={this.props.buttonHandler}>Submit</button>
 
            
-            </>
+            </div>
         )
     }
 }
