@@ -12,7 +12,7 @@ class GeneralInfo extends React.Component{
 
         return(
             <div className="ginfo">
-            
+            <h2>Personal Information</h2>
             <div>
                 <label htmlFor="name">Name</label>
                 <input type="text" onChange={this.props.changeHandler} className="name" id="name"></input>
