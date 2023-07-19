@@ -39,10 +39,14 @@ class CvInfo extends React.Component{
         for(let j = 1;j<=ex;j++){
             let obj = expData[j];
             if(obj){
-            eres.push(<div key={uuidv4()}>{obj['cm']}</div>);
-            eres.push(<div key={uuidv4()}>{obj['tt']}</div>);
-            eres.push(<div key={uuidv4()}>{obj['res']}</div>);
-            eres.push(<div key={uuidv4()}>{obj['dow']}</div>);
+            eres.push(
+            <div>
+                            <div key={uuidv4()}>{obj['cm']}</div>
+                            <div key={uuidv4()}>{obj['tt']}</div>
+                            <div key={uuidv4()}>{obj['res']}</div>
+                            <div key={uuidv4()}>{obj['dow']}</div>
+            </div>
+            );
             }
         }
 
@@ -53,15 +57,26 @@ class CvInfo extends React.Component{
         
         return(
             <div className="cv">
+
+                <h1>Curriculum Vitae</h1>
             <div className="pd">
-                <div>{name}</div>
-                <div>{country}</div>
-                <div>{address}</div>
-                <div>{email}</div>
-                <div>{phone}</div>
+                <div><h1>{name}</h1></div>
+
+                <h3>{address} • {country} • {'+91 ' + phone} • {email}</h3>
+                
             </div>
-            
-            <div className="edu">{res}</div>
+
+
+            <h3>Education</h3>
+            <div className="cedu">
+                
+
+                {
+                res.map((edu)=>{
+                    return <div>{edu}</div>;
+                })}
+                
+            </div>
 
             <div className="exp">{eres}</div>
             </div>

@@ -35,7 +35,7 @@
 }
 .gbtn{
     width: 30%;
-    height: 70%;
+    height: 90%;
 }
 body{
     padding: 0;
@@ -89,6 +89,7 @@ div.bar{
 
 .ginfo>h2{
     text-decoration: underline;
+    background-color: lightcoral;
 }
 
 
@@ -102,13 +103,37 @@ input,textarea{
     padding: 10px;
     background-color: honeydew;
     border-radius: 15px;
+
+    
 }
 
 
 button{
     background-color: coral;
+    border-radius: 5px;
 }
 
+
+.cv{
+    width: 99%;
+    text-align: center;
+    border: 1px solid black;
+
+    background-color: whitesmoke;
+}
+
+
+.cv>h1{
+    text-align: center;
+    text-decoration: underline;
+}
+
+
+.cedu{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    row-gap: 2rem;
+}
 
 
 
