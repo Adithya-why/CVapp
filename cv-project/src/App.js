@@ -2,6 +2,9 @@ import React from "react";
 
 import { v4 as uuidv4 } from 'uuid';
 
+import jsPDF from 'jspdf';
+
+import html2canvas from 'html2canvas';
 
 import "./styles/app.css";
 
@@ -108,6 +111,12 @@ class App extends React.Component{
     }
   
 
+
+
+    
+
+
+
   render(){
 
     //basically decides how many edu info comps are to be rendered based on n value in state
@@ -127,6 +136,7 @@ class App extends React.Component{
     return(
       <>
 
+    
       <TopBar/>
     
       <GeneralInfo changeHandler={(e)=>this.putName(e)}  buttonHandler={()=>this.putData()}/>
@@ -148,7 +158,7 @@ class App extends React.Component{
       
 
       
-
+     
       </>
     )
   }

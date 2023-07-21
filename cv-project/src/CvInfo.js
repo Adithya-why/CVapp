@@ -41,11 +41,21 @@ class CvInfo extends React.Component{
             if(obj){
             eres.push(
             <div>
-                            <div key={uuidv4()}>{obj['cm']}</div>
-                            <div key={uuidv4()}>{obj['tt']}</div>
-                            <div key={uuidv4()}>{obj['res']}</div>
-                            <div key={uuidv4()}>{obj['dow']}</div>
-            </div>
+                            <li>
+                                <div key={uuidv4()} className="cnimp">{obj['cm']}</div>
+                            </li>
+                            <li>
+                                <div key={uuidv4()}>{obj['tt']}</div>
+                            </li>
+                            <li>
+                                <div key={uuidv4()}>{obj['res']}</div>
+                            </li>
+                            <li>
+                                <div key={uuidv4()}>{obj['dow']}</div>
+                                            
+                            </li>
+
+                        </div>
             );
             }
         }
@@ -56,7 +66,7 @@ class CvInfo extends React.Component{
 
         
         return(
-            <div className="cv">
+            <div className="cv" id="cv">
 
                 <h1>Curriculum Vitae</h1>
             <div className="pd">
@@ -67,9 +77,11 @@ class CvInfo extends React.Component{
             </div>
 
 
-            <h3>Education</h3>
+            <h3 className="eduh">Education</h3>
             <div className="cedu">
-                
+                <div className="edut">School Name</div>
+                <div className="edut">Title of study</div>
+                <div className="edut">Date of study</div>
 
                 {
                 res.map((edu)=>{
@@ -77,8 +89,15 @@ class CvInfo extends React.Component{
                 })}
                 
             </div>
+            <h3 className="eduh">Experience</h3>
+            <div className="expc">
 
-            <div className="exp">{eres}</div>
+
+            {
+                eres.map((ere)=>{
+                    return <div className="expJobs"><ul>{ere}</ul></div>;
+                })}
+            </div>
             </div>
         )
     }

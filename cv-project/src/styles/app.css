@@ -89,7 +89,7 @@ div.bar{
 
 .ginfo>h2{
     text-decoration: underline;
-    background-color: lightcoral;
+    background-color: lightblue;
 }
 
 
@@ -120,6 +120,8 @@ button{
     border: 1px solid black;
 
     background-color: whitesmoke;
+    margin-bottom: 0.5rem;
+    padding-bottom: 1rem;
 }
 
 
@@ -135,5 +137,52 @@ button{
     row-gap: 2rem;
 }
 
+
+.eduh{
+    text-decoration: underline;
+}
+
+.edut{
+    font-weight: bold;
+}
+
+
+.expc{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: center;
+}
+
+
+.expJobs{
+    display: flex;
+
+}
+
+
+.cnimp{
+    font-size: 1.3rem;
+    
+}
+
+
+
+body::-webkit-scrollbar {
+    width: 6px;               /* width of the entire scrollbar */
+  }
+
+
+  body::-webkit-scrollbar-track {
+    background: whitesmoke;        /* color of the tracking area */
+  }
+
+
+
+  body::-webkit-scrollbar-thumb {
+    background-color: white;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid black;  /* creates padding around scroll thumb */
+  }
 
 
