@@ -9,7 +9,10 @@ class GeneralInfo extends React.Component{
 
     render(){
 
+        //change handler updates state varibale
+        //button handler stores those object in data object in state
 
+        
         return(
             <div className="ginfo">
             <h2>Personal Information</h2>

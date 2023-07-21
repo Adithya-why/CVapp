@@ -9,7 +9,8 @@ class CvInfo extends React.Component{
 
 
     render(){
-
+        //gets the state as a prop and extracts information
+        //personal details
         let name = this.props.info.data.name;
         let country = this.props.info.data.country;
         let address = this.props.info.data.address;
@@ -21,7 +22,8 @@ class CvInfo extends React.Component{
 
         let n = this.props.info.n;
         let res = [];
-       
+       //gets edudata witb n values, meaning n counts of edudata were entered
+       //pushes elements to array to to be displayed
         for(let i = 1;i<=n;i++){
             let obj = eduData[i];
             if(obj){
@@ -31,6 +33,8 @@ class CvInfo extends React.Component{
             }
         }
         
+
+        //same as above but for exp
         let expData = this.props.info.expData;
         let ex = this.props.info.ex;
 

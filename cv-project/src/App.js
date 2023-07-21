@@ -25,6 +25,11 @@ class App extends React.Component{
     super(props);
 
     //state is initalized
+    //data for personal details
+    //edudata for edu
+    //expdata for experience
+    //n is for number of edu info 
+    //ex is for number of expinfo
     this.state = {
       data : {},
       eduData : {},
@@ -53,6 +58,9 @@ class App extends React.Component{
 
 
   //function to change state everytime the button is clicked
+
+  //takes the data from classname varibales in state and stores them in the data object
+
   putData(){
   
     this.setState({
@@ -71,7 +79,8 @@ class App extends React.Component{
 
     //function to add more educational info component
 
-    //increases n value i state
+    //increases n value im state
+
 
 
     addEduInfo(){
@@ -85,6 +94,9 @@ class App extends React.Component{
 
 
 //stores eduInfo in the edudata object
+//basically adds an new element to the edu data in state with n as the key and corresponding information as the value
+//example 1: {school name : Loyola} and so on
+//use ... operator to retain existing values
     storeEduInfo(e){
       this.setState({
         data : this.state.data,
@@ -93,7 +105,7 @@ class App extends React.Component{
       })
     }
 
-
+    //same as above but for exp info
     addExpInfo(){
       this.setState({
         
@@ -145,7 +157,7 @@ class App extends React.Component{
       <div className="edu">{eduArr}</div>
       
       
-
+      
       <button onClick={()=>this.addEduInfo()}>Add Education</button>
 
 
